@@ -151,6 +151,10 @@
 
                 <div class="plan-summary">
                     <div class="plan-summary-row">
+                        <span class="plan-summary-label">Delivery Number:</span>
+                        <span class="plan-summary-value" id="plan-delivery">Loading...</span>
+                    </div>
+                    <div class="plan-summary-row">
                         <span class="plan-summary-label">Plan:</span>
                         <span class="plan-summary-value" id="plan-name">Loading...</span>
                     </div>
@@ -336,7 +340,9 @@
         window.addEventListener('DOMContentLoaded', () => {
             const planName = sessionStorage.getItem('planName') || 'Unknown Plan';
             const planPrice = sessionStorage.getItem('planPrice') || 'UGX 0';
+            const deliveryNum = sessionStorage.getItem('deliveryNumber') || 'N/A';
             
+            document.getElementById('plan-delivery').textContent = deliveryNum;
             document.getElementById('plan-name').textContent = planName;
             document.getElementById('plan-price').textContent = planPrice;
             document.getElementById('plan-total').textContent = planPrice;
